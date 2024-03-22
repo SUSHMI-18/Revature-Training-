@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Divs</title>
+<style>
+    .interactive-div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 10px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .interactive-div:hover {
+        background-color: blue;
+    }
+
+    .background-image {
+        background-image: url('image.jpg'); 
+        background-size: cover;
+    }
+
+    .larger-size {
+        width: 150px !important;
+        height: 150px !important;
+    }
+</style>
+</head>
+<body>
+
+<div class="interactive-div" id="div1"></div>
+<div class="interactive-div" id="div2"></div>
+<div class="interactive-div" id="div3"></div>
+<div class="interactive-div" id="div4"></div>
+
+<script>
+    
+    document.getElementById("div1").addEventListener("click", function() {
+        this.style.backgroundColor = "green";
+    });
+
+    
+    document.getElementById("div2").addEventListener("mouseenter", function() {
+        this.style.backgroundColor = "yellow";
+    });
+
+    
+    document.getElementById("div3").addEventListener("click", function() {
+        this.classList.add("background-image");
+    });
+
+    
+    document.getElementById("div4").addEventListener("click", function() {
+        this.classList.add("larger-size");
+    });
+</script>
+
+</body>
+</html>

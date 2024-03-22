@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Div with Text Change</title>
+<style>
+    .interactive-div {
+        width: 200px;
+        height: 100px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+    }
+
+    .clicked {
+        background-color: pink !important;
+    }
+</style>
+</head>
+<body>
+
+<div class="interactive-div" id="demoDiv">Demo text</div>
+
+<script>
+    document.getElementById("demoDiv").addEventListener("click", function() {
+        this.textContent = "I got clicked";
+        this.classList.add("clicked");
+    });
+</script>
+
+</body>
+</html>

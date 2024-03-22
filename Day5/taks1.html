@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Text Color</title>
+<style>
+    .para {
+        color: black; 
+    }
+</style>
+</head>
+<body>
+
+<div id="mainDiv">
+    <p class="para">Paragraph 1</p>
+    <p class="para">Paragraph 2</p>
+</div>
+<script>
+    var mainDivById = document.getElementById("mainDiv"); 
+    mainDivById.style.color = "red";
+    var parasByClass = document.getElementsByClassName("para");
+    for (var i = 0; i < parasByClass.length; i++) {
+        parasByClass[i].style.color = "red";
+    }
+</script>
+
+</body>
+</html>
