@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Data Form</title>
+</head>
+<body>
+
+<form id="userDataForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<div id="userNames"></div>
+
+<script>
+    var userArray = [];
+
+    function submitForm() {
+        var nameInput = document.getElementById("name").value;
+        var emailInput = document.getElementById("email").value;
+
+        var userData = {
+            name: nameInput,
+            email: emailInput
+        };
+
+        userArray.push(userData);
+        displayUserNames();
+    }
+
+    function displayUserNames() {
+        var userNamesDiv = document.getElementById("userNames");
+        userNamesDiv.innerHTML = ""; 
+
+        userArray.forEach(function(user) {
+            var userNameElement = document.createElement("p");
+            userNameElement.textContent = user.name;
+            userNamesDiv.appendChild(userNameElement);
+        });
+    }
+</script>
+
+</body>
+</html>
